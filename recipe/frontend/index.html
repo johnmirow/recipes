@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Allergy Recipes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🥗 Food Allergy Recipes</h1>
+
+  <div id="lang-switch">
+    🌎 Language:
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('sk')">Slovensky</button>
+  </div>
+
+  <section id="login" aria-labelledby="loginHeader">
+    <h2 id="loginHeader">Login</h2>
+    <input id="email" type="email" placeholder="Email" aria-label="Email address"><br>
+    <input id="password" type="password" placeholder="Password" aria-label="Password"><br>
+    <button onclick="login()">Login</button>
+    <p id="loginStatus" role="status" aria-live="polite"></p>
+  </section>
+
+  <section id="addRecipe" style="display:none;" aria-labelledby="addHeader">
+    <h2 id="addHeader">Add New Recipe</h2>
+    <input id="title" placeholder="Title"><br>
+    <textarea id="description" placeholder="Description"></textarea><br>
+    <textarea id="instructions" placeholder="Instructions"></textarea><br>
+    <input id="prep_time" type="number" placeholder="Prep time (min)">
+    <input id="cook_time" type="number" placeholder="Cook time (min)">
+    <input id="servings" type="number" placeholder="Servings"><br>
+    <input id="source_url" type="url" placeholder="Source URL (YouTube/Instagram/blog)"><br>
+    <input id="image_url" type="url" placeholder="Image URL (optional)"><br>
+    <button onclick="addRecipe()">Add Recipe</button>
+    <p id="recipeStatus" role="status" aria-live="polite"></p>
+  </section>
+
+  <section id="myRecipes" style="display:none;">
+    <h2 id="myHeader">My Recipes</h2>
+    <button onclick="loadMyRecipes()" id="btnLoadMine">Load My Recipes</button>
+    <ul id="myList"></ul>
+  </section>
+
+  <section id="search">
+    <h2 id="searchHeader">Search safe recipes</h2>
+    <input id="exclude" placeholder="Allergens to avoid (comma separated)">
+    <button onclick="searchRecipes()" id="btnSearch">Search</button>
+  </section>
+
+  <section id="results">
+    <h2 id="resultsHeader">Results</h2>
+    <ul id="recipeList"></ul>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
